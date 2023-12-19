@@ -1,7 +1,9 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+var scoreBoard = document.getElementById("score");
+var bestScore = document.getElementById("hi-score")
 var score = 0;
-var scoreboard = document.getElementById("score");
+var hiScore = 0;
 
 function jump() {
     if (dino.classList != "jump"){
@@ -14,10 +16,14 @@ function jump() {
 }
 
 function renderScore() {
-    scoreboard.innerText = score;
+    scoreBoard.innerText = score;
 }
 function gameOver() {
-    score = 0;
+    if (score > hiScore) {
+        hiScore = score;
+        bestScore.innerText = hiScore;
+        score = 0;
+    }
 }
 
 let isAlive = setInterval(function (){
