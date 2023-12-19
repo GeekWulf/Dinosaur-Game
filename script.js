@@ -17,23 +17,21 @@ function renderScore() {
     scoreboard.innerText = score;
 }
 function gameOver() {
-    scoreboard.innerText = 0;
+    score = 0;
 }
 
 let isAlive = setInterval(function (){
+    renderScore();
+    score += 1;
     let dinoTop = parseInt(
         window.getComputedStyle(dino).getPropertyValue("top"));
     let cactusLeft = parseInt(
         window.getComputedStyle(cactus).getPropertyValue("left"));
 
-    if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140){
+    if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 300){
         console.log("collusion");
         alert("GAME OVER!")
         gameOver();
-    }else if ( cactusLeft <= 0 && cactusLeft > -25 ){
-        console.log("passed")
-        renderScore();
-        score += 5;
     }
 }, 10);
 
