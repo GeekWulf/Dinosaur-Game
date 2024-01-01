@@ -7,14 +7,21 @@
         <link rel = "stylesheet" href = "style.css" />
     </head>
     <body style="background-color:rgb(150, 212, 221);">
-        <div class =  "game">
-            <div id = "dino"></div>
-            <div id = "cactus"></div>
+        <div id = "window">
+            <h1 id = "title">Dinosaure Game</h1>
+            <div class =  "game">
+                <div id = "dino"></div>
+                <div id = "cactus"></div>
+                <nav id = "ScoreBoard">
+                    <li>Score: <span id = "score">0</span></li>
+                    <li>Hihg Score: <span id = "hi-score">0</span></li>
+                </nav>
+                <hr>
+            </div>
+            <div id = "screen">
+                <div id = "startScreen"><h3>Click to start</h3></div>
+            </div>
         </div>
-        <ui id = "ScoreBoard">
-            <li>Score: <span id = "score">0</span></li>
-            <li>Hihg Score: <span id = "hi-score">0</span></li>
-        </ui>
         <script src = "script.js"></script>
     </body>
 </html>
